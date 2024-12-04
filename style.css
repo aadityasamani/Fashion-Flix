@@ -1,0 +1,915 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F0F7EE;
+  color: #03254E;
+}
+
+i {
+  cursor: pointer
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar {
+  height: 11vh;
+  width: 100vw;
+  background-color: #03254E;
+  color: #F0F7EE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  top: 3px;
+  left: 5px;
+}
+
+.nav-logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.nav-searchbar input {
+  height: 34px;
+  width: 900px;
+  font-size: 20px;
+  border: 2px solid #F0F7EE;
+  border-radius: 20px;
+  padding-left: 10px;
+  color: #F0F7EE;
+  background: transparent;
+  outline: none;
+}
+
+.nav-searchbar i {
+  position: relative;
+  font-size: 21px;
+  left: -40px;
+}
+
+.nav-searchbar input::placeholder {
+  color: #F0F7EE;
+}
+
+.nav-rightbuttons {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-rightbuttons i {
+  font-size: 21px;
+}
+
+/* End of Navbar */
+
+/* Website faden animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.50;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* End of fadeIn animation */
+
+/* Floating tshirt animation  */
+@keyframes float {
+  from {}
+
+  to {
+    transform: rotate(12deg);
+  }
+}
+
+/* End of animation */
+
+main {
+  animation: fadeIn cubic-bezier(0.4, -0.01, 1, 1) 1 1s forwards;
+  margin-top: 100px;
+}
+
+.welcomeContainer {
+  height: 89vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.welcomeText_Button {
+  width: 45%;
+
+  p {
+    margin-top: 5px;
+    line-height: 27px;
+  }
+
+  span {
+    color: #03254E;
+    font-weight: 650;
+    font-size: 21px;
+  }
+}
+
+.Shop-Now-Btn {
+  width: 120px;
+  height: 42px;
+  font-size: 17px;
+  background-color: #03254e;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  i {position: relative;left: 3px;} 
+}
+
+
+.welcomeImg {
+  height: 470px;
+  width: 610px;
+  animation: float 1s ease-in-out infinite alternate;
+  margin-left: 20px;
+  position: relative;
+  left: 50px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.choosingContainer {
+  height: 89vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+.choosingText {
+  width: 45%;
+
+  p {
+    margin-top: 3px;
+    line-height: 27px;
+  }
+}
+
+.choosingImg {
+  height: 600px;
+  width: 600px;
+  margin-left: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
+}
+
+.contentbox {
+  margin: -100px 0px;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 430px);
+  align-content: center;
+  justify-items: center;
+  row-gap: 120px;
+}
+
+.categoriesdiv {
+  height: 220px;
+  width: 220px;
+  transition: transform 0.3s cubic-bezier(0.5, 0.25, 0.66, 0.87);
+}
+
+.Coverimg {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  text-align: center;
+  border: 4px solid #384a71ea;
+  transition: box-shadow 0.3s cubic-bezier(0.5, 0.25, 0.66, 0.87);
+}
+
+.coverdes {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.categoriesdiv:hover {
+  transform: scale(1.3);
+
+  img {
+    box-shadow: #03254E 3px 3px 12px 0px;
+  }
+}
+
+@media screen and (min-width:320px) and (max-width:600px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    display: none;
+  }
+
+  .nav-searchbar i {
+    left: 25px;
+  }
+
+  .welcomeImg {
+    height: 250px;
+    width: 350px;
+    margin-left: 0px;
+    position: relative;
+    left: 0px;
+    top: -40px;
+  }
+
+  .welcomeText_Button {
+    display: flex;
+    flex-direction: column;
+
+    .Shop-Now-Btn {
+      align-self: center;
+    }
+  }
+
+  .choosingImg {
+    height: 300px;
+    width: 300px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    p {
+      font-size: 16px;
+    }
+
+    h1,
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .choosingContainer {
+    justify-content: space-evenly;
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 90%;
+  }
+
+  .contentbox {
+    margin-top: 150px;
+    grid-template-columns: repeat(2, 50vw);
+  }
+
+  .categoriesdiv {
+    height: 160px;
+    width: 160px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width:600px) and (max-width:768px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    display: none;
+  }
+
+  .nav-searchbar i {
+    left: 25px;
+  }
+
+  .welcomeImg {
+    height: 270px;
+    width: 370px;
+    margin-left: 0px;
+    position: relative;
+    left: 0px;
+    top: -40px;
+  }
+
+  .welcomeText_Button {
+    display: flex;
+    flex-direction: column;
+
+    .Shop-Now-Btn {
+      align-self: center;
+    }
+  }
+
+  .choosingImg {
+    height: 320px;
+    width: 320px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    p {
+      font-size: 16px;
+    }
+
+    h1,
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .choosingContainer {
+    justify-content: space-evenly;
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 90%;
+  }
+
+  .contentbox {
+    margin-top: 210px;
+    grid-template-columns: repeat(2, 50vw);
+  }
+
+  .categoriesdiv {
+    height: 190px;
+    width: 190px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:900px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 300px;
+  }
+
+  .welcomeImg {
+    height: 270px;
+    width: 370px;
+    margin-left: 0px;
+    position: relative;
+    left: 0px;
+    top: -40px;
+  }
+
+  .welcomeText_Button {
+    display: flex;
+    flex-direction: column;
+
+    .Shop-Now-Btn {
+      align-self: center;
+    }
+  }
+
+  .choosingImg {
+    height: 320px;
+    width: 320px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    p {
+      font-size: 17px;
+    }
+
+    h1,
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .choosingContainer {
+    justify-content: space-evenly;
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 90%;
+  }
+
+  .contentbox {
+    margin-top: 245px;
+    grid-template-columns: repeat(2, 50vw);
+  }
+
+  .categoriesdiv {
+    height: 210px;
+    width: 210px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width:900px) and (max-width:1024px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 300px;
+  }
+
+  .welcomeImg {
+    height: 270px;
+    width: 370px;
+    margin-left: 0px;
+    position: relative;
+    left: 0px;
+    top: -40px;
+  }
+
+  .welcomeText_Button {
+    display: flex;
+    flex-direction: column;
+
+    .Shop-Now-Btn {
+      align-self: center;
+    }
+  }
+
+  .choosingImg {
+    height: 320px;
+    width: 320px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    p {
+      font-size: 18px;
+    }
+
+    h1,
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  .choosingContainer {
+    justify-content: space-evenly;
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 90%;
+  }
+
+  .contentbox {
+    margin-top: 275px;
+    grid-template-columns: repeat(2, 50vw);
+  }
+
+  .categoriesdiv {
+    height: 210px;
+    width: 210px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width:1445px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 500px;
+  }
+
+  .welcomeImg {
+    height: 300px;
+    width: 400px;
+    margin-left: 0px;
+    position: relative;
+    left: 0px;
+    top: -40px;
+  }
+
+  .welcomeText_Button {
+    display: flex;
+    flex-direction: column;
+
+    .Shop-Now-Btn {
+      align-self: center;
+    }
+  }
+
+  .choosingImg {
+    height: 340px;
+    width: 340px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    p {
+      font-size: 19px;
+    }
+
+    h1,
+    h2 {
+      font-size: 23px;
+    }
+  }
+
+  .choosingContainer {
+    justify-content: space-evenly;
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 82%;
+  }
+
+  .contentbox {
+    margin-top: 200px;
+    grid-template-columns: repeat(3, 33vw);
+  }
+
+  .categoriesdiv {
+    height: 210px;
+    width: 210px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 19px;
+  }
+}
+
+@media screen and (min-width:1445px) and (max-width:1740px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 600px;
+  }
+
+  .welcomeImg {
+    height: 330px;
+    width: 430px;
+    margin-left: 0px;
+    position: relative;
+    left: 0px;
+    top: -40px;
+  }
+
+  .welcomeText_Button {
+    display: flex;
+    flex-direction: column;
+
+    .Shop-Now-Btn {
+      align-self: center;
+    }
+  }
+
+  .choosingImg {
+    height: 400px;
+    width: 400px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    p {
+      font-size: 19px;
+    }
+
+    h1,
+    h2 {
+      font-size: 23px;
+    }
+  }
+
+  .choosingContainer {
+    justify-content: space-evenly;
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 82%;
+  }
+
+  .contentbox {
+    margin-top: 200px;
+    grid-template-columns: repeat(3, 33vw);
+  }
+
+  .categoriesdiv {
+    height: 230px;
+    width: 230px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 19px;
+  }
+}
+
+@media screen and (min-width:1750px) and (max-width:2000px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 600px;
+  }
+
+  .welcomeImg {
+    height: 400px;
+    width: 500px;
+    position: relative;
+    top: -40px;
+  }
+
+  .choosingImg {
+    height: 450px;
+    width: 450px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+
+    p {
+      font-size: 21px;
+    }
+
+    h1,
+    h2 {
+      font-size: 25px;
+    }
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 55%;
+  }
+
+  .contentbox {
+    margin-top: 200px;
+    grid-template-columns: repeat(5, 20vw);
+  }
+
+  .categoriesdiv {
+    height: 270px;
+    width: 270px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 21px;
+  }
+
+  .nav-rightbuttons i {
+    font-size: 23px; ;
+  }
+}
+
+@media screen and (min-width:2000px) and (max-width:3000px) {
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 600px;
+  }
+
+  .welcomeImg {
+    height: 400px;
+    width: 500px;
+    position: relative;
+    top: -40px;
+  }
+
+  .choosingImg {
+    height: 450px;
+    width: 450px;
+  }
+
+  .welcomeContainer,
+  .choosingContainer {
+
+    p {
+      font-size: 23px;
+    }
+
+    h1,
+    h2 {
+      font-size: 27px;
+    }
+  }
+
+  .welcomeText_Button,
+  .choosingText {
+    width: 55%;
+  }
+
+  .contentbox {
+    margin-top: 200px;
+    grid-template-columns: repeat(5, 20vw);
+  }
+
+  .categoriesdiv {
+    height: 270px;
+    width: 270px;
+
+    p {
+      white-space: wrap;
+    }
+  }
+
+  .categoriesdiv:hover {
+    transform: none;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .coverdes {
+    font-size: 23px;
+  }
+
+  .nav-rightbuttons i {
+    font-size: 23px; ;
+  }
+}

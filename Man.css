@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+body {
+  background-color: #F0F7EE;
+  color: #03254E;
+}
+
+i {
+  cursor: pointer
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar {
+  height: 11vh;
+  width: 100vw;
+  background-color: #03254E;
+  color: #F0F7EE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  top: 3px;
+  left: 5px;
+}
+
+.nav-logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.nav-searchbar input {
+  height: 34px;
+  width: 900px;
+  font-size: 20px;
+  border: 2px solid #F0F7EE;
+  border-radius: 20px;
+  padding-left: 10px;
+  color: #F0F7EE;
+  background: transparent;
+  outline: none;
+}
+
+.nav-searchbar i {
+  position: relative;
+  font-size: 21px;
+  left: -40px;
+}
+
+.nav-searchbar input::placeholder {
+  color: #F0F7EE;
+}
+
+.nav-rightbuttons {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-rightbuttons i {
+  font-size: 21px;
+}
+
+/* End of Navbar */
+
+.contentbox {
+  height: 89vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  justify-items: center;
+  row-gap: 10px;
+  justify-content: center;
+  margin-top: 105px;
+}
+
+.tshirt-box {
+  height: 375px;
+  width: 320px;
+  border: 2px solid transparent;
+  transition: all 0.5s;
+  text-align: center;
+  position: relative;
+  border-radius: 2px;
+}
+
+.tshirt-box:hover {
+  box-shadow: 5px 1px 14px 0px;
+  border-radius: 15px;
+  border: 2px solid #03254E;
+
+  img {
+    border-radius: 15px;
+  }
+
+  .description {
+    display: none;
+  }
+}
+
+.tshirt-box img {
+  height: 83%;
+  width: 97%;
+  padding: 1.5%;
+  border-radius: 5px;
+}
+
+.cart-box {
+  width: 205px;
+  height: 35px;
+  margin-left: 55px;
+  border: 2px solid #03254E;
+  color: #03254E;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+
+  transition: all cubic-bezier(0.2, 0.74, 0.23, 0.91) 0.5s;
+  p {
+    margin-left: 3px;
+  }
+}
+
+.tshirt-box:hover .cart-box {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.cart-box:hover {
+  background-color: #03254E;
+  color: #F0F7EE;
+}
+
+.GoHome {
+  height: 90px;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-wrap: balance;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #03254E;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+}
+
+@media screen and (min-width:320px) and (max-width:600px) {
+  .cart-box {
+    display: none;
+  }
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    display: none;
+  }
+
+  .nav-searchbar i {
+    left: 25px;
+  }
+
+  .tshirt-box {
+    height: 180px;
+    width: 160px;
+    pointer-events: none;
+  }
+
+  .contentbox {
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 50px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width:600px) and (max-width:768px) {
+  .cart-box {
+    display: none;
+  }
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    display: none;
+  }
+
+  .nav-searchbar i {
+    left: 25px;
+  }
+
+  .tshirt-box {
+    height: 200px;
+    width: 180px;
+    pointer-events: none;
+  }
+
+  .contentbox {
+    grid-template-columns: repeat(3, 30%);
+    row-gap: 50px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .cart-box {
+    display: none;
+  }
+
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 300px;
+  }
+
+  .tshirt-box {
+    height: 230px;
+    width: 210px;
+  }
+
+  .contentbox {
+    grid-template-columns: repeat(3, 30%);
+    row-gap: 50px;
+    margin-top: 120px;
+  }
+
+  .tshirt-box {
+    pointer-events: none;
+  }
+
+}
+
+@media screen and (min-width:1024px) and (max-width:1445px) {
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 500px;
+  }
+
+  .tshirt-box {
+    height: 280px;
+    width: 240px;
+
+    img {
+      padding: 1.25%;
+    }
+  }
+
+  .contentbox {
+    grid-template-columns: repeat(4, 24%);
+    row-gap: 25px;
+    margin-top: 110px;
+  }
+
+  .cart-box {
+    width: 190px;
+    height: 30px;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    box-sizing: border-box;
+
+    transition: all cubic-bezier(0.2, 0.74, 0.23, 0.91) 0.5s;
+
+    p {
+      margin-left: 3px;
+    }
+  }
+}
+
+@media screen and (min-width:1445px) and (max-width:1740px) {
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 600px;
+  }
+
+  .tshirt-box {
+    height: 330px;
+    width: 290px;
+
+    img {
+      padding: 1.25%;
+    }
+  }
+
+  .contentbox {
+    grid-template-columns: repeat(4, 24%);
+    row-gap: 25px;
+    margin-top: 110px;
+  }
+
+  .cart-box {
+    width: 190px;
+    height: 30px;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width:1750px) and (max-width:3000px) {
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .nav-searchbar input {
+    width: 600px;
+  }
+
+  .tshirt-box {
+    height: 380px;
+    width: 340px;
+
+    img {
+      padding: 1.25%;
+    }
+  }
+
+  .contentbox {
+    grid-template-columns: repeat(5, 20%);
+    row-gap: 25px;
+    margin-top: 110px;
+  }
+
+  .cart-box {
+    width: 200px;
+    height: 35px;
+    margin-left: 70px;
+    font-size: 18px;
+  }
+}
